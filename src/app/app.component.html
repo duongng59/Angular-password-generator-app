@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="columns is-centered m-5">
+    <div class="box column is-one-third">
+      <h1 class="title has-text-centered">Password Generator</h1>
+
+      <div class="field">
+        <label>Length</label>
+        <input class="input mt-2" (input)="onChangeLength($event)" />
+      </div>
+
+      <div class="field">
+        <div class="control">
+          <label class="checkbox">
+            <input (change)="onChangedUseLetterMed()" type="checkbox" />
+            Use Letters
+          </label>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="control">
+          <label class="checkbox">
+            <input (change)="onChangedUseNumberMed()" type="checkbox" />
+            Use Numbers
+          </label>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="control">
+          <label class="checkbox">
+            <input (change)="onChangedUseSymbolMed()" type="checkbox" />
+            Use Symbols
+          </label>
+        </div>
+      </div>
+
+      <button 
+        (click)="onButton()" class="button is-link is-fullwidth">
+        Generate!
+      </button>
+
+      <div class="box" *ngIf="pasword">
+        <label>Your Password</label>
+        <input disabled class="input mt-2" [value]="pasword" />
+      </div>
+    </div>
+  </div>
+</div>
